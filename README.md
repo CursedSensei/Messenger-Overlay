@@ -7,10 +7,10 @@ It will notify you when new messages arrived from Messenger via an overlay. You 
 
 # Task Lists
 
-Complete window forms
+Complete window forms ❌
 
-Add overlay behaviors
+Add overlay behaviors ❌
 
-Messenger to app interactions
+Messenger to app interactions ❌
 
-. . . Debug
+. . . Debug ❌
