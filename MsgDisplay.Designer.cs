@@ -30,18 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MsgDisplay));
             this.MoveBox = new System.Windows.Forms.PictureBox();
+            this.sKeyWorker = new System.ComponentModel.BackgroundWorker();
+            this.delayedInit = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.MoveBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MoveBox
             // 
             this.MoveBox.Image = global::Messenger_Overlay.Properties.Resources.MoveBox;
-            this.MoveBox.Location = new System.Drawing.Point(361, 1);
+            this.MoveBox.Location = new System.Drawing.Point(371, 1);
             this.MoveBox.Name = "MoveBox";
             this.MoveBox.Size = new System.Drawing.Size(14, 14);
             this.MoveBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MoveBox.TabIndex = 0;
             this.MoveBox.TabStop = false;
+            // 
+            // sKeyWorker
+            // 
+            this.sKeyWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.sKeyWorker_DoWork);
+            // 
+            // delayedInit
+            // 
+            this.delayedInit.DoWork += new System.ComponentModel.DoWorkEventHandler(this.delayedInit_DoWork);
             // 
             // MsgDisplay
             // 
@@ -50,7 +60,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(376, 452);
+            this.ClientSize = new System.Drawing.Size(386, 465);
             this.Controls.Add(this.MoveBox);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
@@ -72,5 +82,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox MoveBox;
+        private System.ComponentModel.BackgroundWorker sKeyWorker;
+        private System.ComponentModel.BackgroundWorker delayedInit;
     }
 }
