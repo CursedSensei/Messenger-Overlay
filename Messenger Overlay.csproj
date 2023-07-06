@@ -40,6 +40,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MsgDisplay.Workers.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="MsgDisplay.cs">
       <SubType>Form</SubType>
