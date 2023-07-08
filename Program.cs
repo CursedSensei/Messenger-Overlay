@@ -5,6 +5,8 @@ namespace Messenger_Overlay
 {
     class Program
     {
+        internal static MsgDisplay MainForm;
+
         [System.STAThread]
         static void Main(string[] argv)
         {
@@ -18,12 +20,16 @@ namespace Messenger_Overlay
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             if (argv.Length != 0 && argv[0] == "--start-minimized")
             {
-                Application.Run(new MsgDisplay(true));
+                MainForm = new MsgDisplay(true);
+                Application.Run(MainForm);
             }
-            else { 
-                Application.Run(new MsgDisplay(false)); 
+            else
+            {
+                MainForm = new MsgDisplay(false);
+                Application.Run(MainForm); 
             }
 
             mutex.Close();

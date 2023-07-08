@@ -22,6 +22,13 @@ namespace Messenger_Overlay
                         }
                     }
                     else { kBuffer = false; }
+
+                    if ((Keyboard.IsKeyDown(Key.LeftAlt) || 
+                        Keyboard.IsKeyDown(Key.RightAlt)) && 
+                        this.Visible == true) 
+                    {
+                        ShowDisplay();
+                    }
                 });
 
                 System.Threading.Thread.Sleep(30);
@@ -32,7 +39,25 @@ namespace Messenger_Overlay
         {
             while (!sKeyWorker.IsBusy) { }
             System.Threading.Thread.Sleep(50);
-            this.ShowDisplay();
+            if ((bool)e.Argument)
+            {
+                this.Invoke((MethodInvoker)delegate () { this.ShowDisplay(); });
+            }
+            else
+            {
+                this.Invoke((MethodInvoker)delegate () {
+                    this.ShowDisplay();
+                    this.ShowDisplay();
+                });
+            }
+
+        }
+
+        private void backgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(BackForm);
         }
     }
 }

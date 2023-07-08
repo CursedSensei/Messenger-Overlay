@@ -17,11 +17,13 @@ namespace Messenger_Overlay
             this.MouseBox_pos.X = Cursor.Position.X - this.Location.X;
             this.MouseBox_pos.Y = Cursor.Position.Y - this.Location.Y;
         }
+
         protected void MouseBox_Up(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) { return; }
             this.MouseBox_Move = false;
         }
+
         protected void MouseBox_Moving(object sender, MouseEventArgs e)
         {
             if (this.MouseBox_Move)

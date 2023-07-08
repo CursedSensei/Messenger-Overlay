@@ -32,6 +32,7 @@
             this.MoveBox = new System.Windows.Forms.PictureBox();
             this.sKeyWorker = new System.ComponentModel.BackgroundWorker();
             this.delayedInit = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.MoveBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,10 @@
             // delayedInit
             // 
             this.delayedInit.DoWork += new System.ComponentModel.DoWorkEventHandler(this.delayedInit_DoWork);
+            // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
             // 
             // MsgDisplay
             // 
@@ -74,6 +79,7 @@
             this.Text = "Messenger Display";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Lime;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnClosing);
             ((System.ComponentModel.ISupportInitialize)(this.MoveBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -83,6 +89,7 @@
 
         private System.Windows.Forms.PictureBox MoveBox;
         private System.ComponentModel.BackgroundWorker sKeyWorker;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
         private System.ComponentModel.BackgroundWorker delayedInit;
     }
 }

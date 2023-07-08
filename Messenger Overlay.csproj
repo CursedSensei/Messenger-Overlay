@@ -40,6 +40,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MsgBackground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBackground.Designer.cs">
+      <DependentUpon>MsgBackground.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgDisplay.Fields.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MsgDisplay.Workers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +78,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MsgBackground.resx">
+      <DependentUpon>MsgBackground.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MsgDisplay.resx">
       <DependentUpon>MsgDisplay.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,10 +90,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="Resources\mainwindow.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MoveBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\MsgIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
